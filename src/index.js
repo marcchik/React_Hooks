@@ -5,9 +5,9 @@ const MyContext = React.createContext();
 
 const App = () => {
     return (
-        <div>
-            <Child />
-        </div>
+      <MyContext.Provider value="Hello" >
+          <Child />
+      </MyContext.Provider>
     )
 }
 
@@ -15,7 +15,7 @@ const App = () => {
 const Child = () => {
     const value = useContext(MyContext)
 
-    return <p></p>
+    return <p>{value}</p>
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
